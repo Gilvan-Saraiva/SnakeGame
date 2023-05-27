@@ -5,6 +5,9 @@ import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Random;
 
+
+
+
 public class Snake extends JPanel implements Runnable, KeyListener {
 
     private static final int LARGURA_JANELA = 300;
@@ -207,6 +210,7 @@ public class Snake extends JPanel implements Runnable, KeyListener {
     }
 
     public static void main(String[] args) {
+        
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Jogo Snake Colorido");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
