@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class JogoSnakeColorido extends JPanel implements Runnable, KeyListener {
+public class Snake extends JPanel implements Runnable, KeyListener {
 
     private static final int LARGURA_JANELA = 300;
     private static final int ALTURA_JANELA = 300;
@@ -15,7 +15,6 @@ public class JogoSnakeColorido extends JPanel implements Runnable, KeyListener {
     private static final int PONTUACAO_MAXIMA = 10;
     private static final int FASES_TOTAL = 5;
     private static final int VELOCIDADE_INICIAL = 1;
-    private static final int VELOCIDADE_MAXIMA = 5;
     private static final Color[] CORES = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.DARK_GRAY, Color.MAGENTA, Color.PINK};
 
     private Thread thread;
@@ -29,12 +28,13 @@ public class JogoSnakeColorido extends JPanel implements Runnable, KeyListener {
     private Color corMaca;
     private int velocidade;
 
-    public JogoSnakeColorido() {
+    public Snake() {
         setPreferredSize(new Dimension(LARGURA_JANELA, ALTURA_JANELA));
         setBackground(Color.BLACK);
         setFocusable(true);
         addKeyListener(this);
         iniciarJogo();
+        
     }
 
     private void iniciarJogo() {
@@ -211,7 +211,7 @@ public class JogoSnakeColorido extends JPanel implements Runnable, KeyListener {
             JFrame frame = new JFrame("Jogo Snake Colorido");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setResizable(false);
-            frame.add(new JogoSnakeColorido());
+            frame.add(new Snake());
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
