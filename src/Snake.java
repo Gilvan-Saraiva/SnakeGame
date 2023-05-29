@@ -57,6 +57,7 @@ public class Snake extends JPanel implements Runnable, KeyListener {
 
     private void gerarMaca() {
         Random random = new Random();
+     
         int x = random.nextInt(LARGURA_JANELA / TAMANHO_BLOCO) * TAMANHO_BLOCO;
         int y = random.nextInt(ALTURA_JANELA / TAMANHO_BLOCO) * TAMANHO_BLOCO;
         maca = new Point(x, y);
